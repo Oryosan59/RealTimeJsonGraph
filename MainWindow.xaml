@@ -1,0 +1,23 @@
+﻿<Window x:Class="RealTimeJsonGraph.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:helix="http://helix-toolkit.org/wpf"
+        mc:Ignorable="d"
+        Title="Real-Time JSON Graph" Height="450" Width="800">
+    <Grid>
+        <helix:HelixViewport3D Name="HelixView">
+            <!-- カメラ -->
+            <helix:HelixViewport3D.Camera>
+                <PerspectiveCamera Position="10,10,10" LookDirection="-10,-10,-10" UpDirection="0,0,1" FieldOfView="60"/>
+            </helix:HelixViewport3D.Camera>
+
+            <!-- 3Dグリッド -->
+            <helix:GridLinesVisual3D Width="100" Length="100" MinorDistance="1" MajorDistance="10" Thickness="0.03"/>
+
+            <!-- ポイントを表示 -->
+            <helix:PointsVisual3D x:Name="PointsVisual" Color="Red" Size="5"/>
+        </helix:HelixViewport3D>
+    </Grid>
+</Window>
